@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/employe_ma.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  font-family: "Poppins", serif;
+}
+
+
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  margin-top:38vh;
+  font-size: 160%;
+
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-conatiner{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 3%;
+    padding: 10px;
+}
+#t1{
+    font-size: 100%;
+}
