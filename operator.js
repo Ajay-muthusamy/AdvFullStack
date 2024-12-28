@@ -76,3 +76,7 @@ var log2 = 20;
 console.log(log1 >> 2)
 console.log(log2 << 2)
 console.log(log2 & log1)
+
+
+const age = 11
+age>=18 ? (console.log("Eligible for vote")):(console.log("Note Eligible for vote"))
