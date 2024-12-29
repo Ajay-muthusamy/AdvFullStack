@@ -7,10 +7,6 @@ console.log("Sum of two Number",add(10,20))
 
 //forEach
 
-arr = ['ajay','anand','dinesh','aaabbbccc']
-arr.forEach((data)=>{
-    console.log(data)
-})
 
 
 //map

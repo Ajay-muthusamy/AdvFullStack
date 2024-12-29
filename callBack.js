@@ -1,15 +1,15 @@
-// submitForm("Form Submitted Successfully", databaseSharing);
+submitForm("Form Submitted Successfully", databaseSharing);
 
-// const databaseSharing = () => {
-//     console.log("Data Stored Successfully");
-// };
+const databaseSharing = () => {
+    console.log("Data Stored Successfully");
+};
 
-// const submitForm = (formMsg, dbs) => {
-//   setTimeout(() => {
-//     dbs();
-//     console.log(formMsg);
-//   }, 2000);
-// };
+const submitForm = (formMsg, dbs) => {
+  setTimeout(() => {
+    dbs();
+    console.log(formMsg);
+  }, 2000);
+};
 
 function handleDoctor(msg) {
     console.log(`D: Hi ${msg} I'm the doctor, how can i help you?`);
