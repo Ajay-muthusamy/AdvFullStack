@@ -6,6 +6,9 @@ import Contact from "./components/FunctionalComponents/Contact";
 import NavBar from "./components/FunctionalComponents/NavBar";
 import About from "./components/FunctionalComponents/About";
 import Footer from "./components/FunctionalComponents/Footer";
+import Hooks from "./components/FunctionalComponents/Hooks";
+import UseRef from "./components/FunctionalComponents/UseRef";
+import UseContext from "./components/FunctionalComponents/UseContext";
 
 const App = () => {
   return (
@@ -17,6 +20,9 @@ const App = () => {
             <Route path="gallery" element={<Gallery />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="hooks" element={<Hooks />} />
+            <Route path="useref" element={<UseRef />} />
+            <Route path="usecontext" element={<UseContext />} />
           </Route>
         </Routes>
         <Footer />
