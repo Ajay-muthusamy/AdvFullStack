@@ -23,6 +23,9 @@ const NavBar = () => {
             <Link to="/contact" className="lis">
               <li>Contact</li>
             </Link>
+            <Link to="/use-memo" className="lis">
+              <li>useMemo</li>
+            </Link>
           </ul>
         </div>
       </nav>

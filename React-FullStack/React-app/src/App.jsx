@@ -9,6 +9,7 @@ import Footer from "./components/FunctionalComponents/Footer";
 import Hooks from "./components/FunctionalComponents/Hooks";
 import UseRef from "./components/FunctionalComponents/UseRef";
 import UseContext from "./components/FunctionalComponents/UseContext";
+import UseMemo from "./components/FunctionalComponents/ContextComponents/UseMemo";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="hooks" element={<Hooks />} />
             <Route path="useref" element={<UseRef />} />
             <Route path="usecontext" element={<UseContext />} />
+            <Route path="use-memo" element={<UseMemo />} />
           </Route>
         </Routes>
         <Footer />

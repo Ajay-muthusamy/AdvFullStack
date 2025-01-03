@@ -23,7 +23,7 @@
 }
 .ul-list > ul {
   display: flex;
-  gap: 25%;
+  gap: 15%;
 }
 .lis {
   list-style: none;
