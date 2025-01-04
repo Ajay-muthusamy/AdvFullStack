@@ -10,6 +10,8 @@ import Hooks from "./components/FunctionalComponents/Hooks";
 import UseRef from "./components/FunctionalComponents/UseRef";
 import UseContext from "./components/FunctionalComponents/UseContext";
 import UseMemo from "./components/FunctionalComponents/ContextComponents/UseMemo";
+import Login from "./components/FunctionalComponents/Login";
+import Register from "./components/FunctionalComponents/Register";
 
 const App = () => {
   return (
@@ -25,6 +27,9 @@ const App = () => {
             <Route path="useref" element={<UseRef />} />
             <Route path="usecontext" element={<UseContext />} />
             <Route path="use-memo" element={<UseMemo />} />
+            <Route  path="/login" element={<Login />} />
+            <Route  path="/register" element={<Register />} />
+            
           </Route>
         </Routes>
         <Footer />

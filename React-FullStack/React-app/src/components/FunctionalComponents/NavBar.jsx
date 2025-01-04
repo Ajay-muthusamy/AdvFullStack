@@ -26,6 +26,9 @@ const NavBar = () => {
             <Link to="/use-memo" className="lis">
               <li>useMemo</li>
             </Link>
+            <Link to="/login" className="lis">
+              <li>Login</li>
+            </Link>
           </ul>
         </div>
       </nav>
