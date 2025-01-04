@@ -18,8 +18,12 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<NavBar />}>
-            <Route path="/" element={<Home />} />
+          
+          <Route exact path="/" element={<Login />} />
+          <Route path="register" element={<Register />} />
+
+          <Route exact path="/navbar" element={<NavBar />}>
+            <Route index element={<Home />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
@@ -27,9 +31,6 @@ const App = () => {
             <Route path="useref" element={<UseRef />} />
             <Route path="usecontext" element={<UseContext />} />
             <Route path="use-memo" element={<UseMemo />} />
-            <Route  path="/login" element={<Login />} />
-            <Route  path="/register" element={<Register />} />
-            
           </Route>
         </Routes>
         <Footer />

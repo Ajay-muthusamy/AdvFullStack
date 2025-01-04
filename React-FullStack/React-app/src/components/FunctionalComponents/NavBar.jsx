@@ -1,17 +1,19 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import "../../assets/css/Navbar.css";
 
 const NavBar = () => {
+   const location = useLocation();
+   const {state} = location || "Navbar";
   return (
     <header>
       <nav className="nav-top">
         <div>
-          <h1>Ajay</h1>
+          <h1>{state}</h1>
         </div>
         <div className="ul-list">
           <ul>
-            <Link to="/" className="lis"    >
+            <Link to="/navbar" className="lis"    >
               <li>Home</li>
             </Link>
             <Link to="/about" className="lis">

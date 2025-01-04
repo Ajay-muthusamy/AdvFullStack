@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/Navbar.css";
 
+import axios from "axios";
+
 const Register = () => {
+  const[firstName,setfirstName] = useState(""); 
+  const[lastName,setlastName] = useState(""); 
+  const[email,seteamil] = useState(""); 
+  const[password,setpassword] = useState(""); 
+
+  async function handlesubmit(e){
+    console.log(firstName,lastName,email,password);
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:2020/signup',{
+        firstName,
+        lastName,
+        email,
+        password
+      });
+      if(response.status == 200){
+        alert(response.data);
+      }
+      console.log(response);
+    } catch (error) {
+      console.log("error in the post")
+    }
+  }
+
   return (
     <div className="register-container">
-      <form className="register-form">
+      <form className="register-form" onSubmit={handlesubmit}>
         <h2 className="register-title">Register</h2>
         <div className="form-group">
           <label htmlFor="firstname">First Name</label>
           <input
             type="text"
             id="firstname"
-            name="firstname"
+            value={firstName}
             placeholder="Enter your first name"
-            required
+            onChange={(e)=>setfirstName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -21,9 +47,9 @@ const Register = () => {
           <input
             type="text"
             id="lastname"
-            name="lastname"
+            value={lastName}
             placeholder="Enter your last name"
-            required
+            onChange={(e)=>setlastName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -31,9 +57,9 @@ const Register = () => {
           <input
             type="email"
             id="email"
-            name="email"
+            value={email}
             placeholder="Enter your email"
-            required
+            onChange={(e)=>seteamil(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -41,9 +67,9 @@ const Register = () => {
           <input
             type="password"
             id="password"
-            name="password"
+            value={password}
             placeholder="Enter your password"
-            required
+            onChange={(e)=>setpassword(e.target.value)}
           />
         </div>
         <button type="submit" className="register-button">
