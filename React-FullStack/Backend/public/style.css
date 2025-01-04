@@ -1,0 +1,7 @@
+.li-style{
+    list-style-type: none;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
