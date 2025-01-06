@@ -24,13 +24,13 @@ const App = () => {
 
           <Route exact path="/navbar" element={<NavBar />}>
             <Route index element={<Home />} />
-            <Route path="gallery" element={<Gallery />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="hooks" element={<Hooks />} />
-            <Route path="useref" element={<UseRef />} />
-            <Route path="usecontext" element={<UseContext />} />
-            <Route path="use-memo" element={<UseMemo />} />
+            <Route path="navbar/gallery" element={<Gallery />} />
+            <Route path="navbar/about" element={<About />} />
+            <Route path="navbar/contact" element={<Contact />} />
+            <Route path="navbar/hooks" element={<Hooks />} />
+            <Route path="navbar/useref" element={<UseRef />} />
+            <Route path="navbar/usecontext" element={<UseContext />} />
+            <Route path="navbar/use-memo" element={<UseMemo />} />
           </Route>
         </Routes>
         <Footer />

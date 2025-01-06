@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../../assets/css/Navbar.css";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const[firstName,setfirstName] = useState(""); 
   const[lastName,setlastName] = useState(""); 
   const[email,seteamil] = useState(""); 
@@ -21,6 +23,7 @@ const Register = () => {
       });
       if(response.status == 200){
         alert(response.data);
+        navigate('/login');
       }
       console.log(response);
     } catch (error) {
@@ -75,6 +78,7 @@ const Register = () => {
         <button type="submit" className="register-button">
           Register
         </button>
+        
       </form>
     </div>
   );

@@ -16,16 +16,16 @@ const NavBar = () => {
             <Link to="/navbar" className="lis"    >
               <li>Home</li>
             </Link>
-            <Link to="/about" className="lis">
+            <Link to="navbar/about" className="lis">
               <li>About</li>
             </Link>
-            <Link to="/gallery" className="lis">
+            <Link to="navbar/gallery" className="lis">
               <li>Gallery</li>
             </Link>
-            <Link to="/contact" className="lis">
+            <Link to="navbar/contact" className="lis">
               <li>Contact</li>
             </Link>
-            <Link to="/use-memo" className="lis">
+            <Link to="navbar/use-memo" className="lis">
               <li>useMemo</li>
             </Link>
             <Link to="/login" className="lis">
