@@ -15,7 +15,7 @@ const Register = () => {
     console.log(firstName,lastName,email,password);
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2020/signup',{
+      const response = await axios.post('https://advfullstack.onrender.com/signup',{
         firstName,
         lastName,
         email,
