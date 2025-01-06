@@ -82,7 +82,7 @@ app.post("/login", async (req, res) => {
       } else {
         res
           .status(200)
-          .json({ Message: "Login Successfully..", isLoggedin: true,userName :existingUser.email });
+          .json({ Message: "Login Successfully", isLoggedin: true,userName :existingUser.email });
       }
     } else {
       res.status(404).send("Create an Account...");
