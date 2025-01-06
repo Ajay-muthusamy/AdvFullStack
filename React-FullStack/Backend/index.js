@@ -3,8 +3,10 @@ var user = require("./models/users");
 var mdb = require("mongoose");
 var cors = require("cors");
 const path = require("path");
+var dotenv = require("dotenv");
 var bodyParser = require("body-parser");
 
+dotenv.config();
 const app = express();
 
 app.use(cors());
@@ -12,8 +14,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // qGIhGXDVrEiykw3W
+const uri = process.env.mongdb_db;
 mdb
-  .connect("mongodb+srv://ajaym22cse:qGIhGXDVrEiykw3W@cluster0.kgi9n.mongodb.net/")
+  .connect(uri)
   .then((response) => {
     if (!response) {
       console.log("response Error");
@@ -78,11 +81,15 @@ app.post("/login", async (req, res) => {
     var existingUser = await user.findOne({ email: Email });
     if (existingUser) {
       if (existingUser.password !== Password) {
-        res.status(404).json({Message : "Invalid Credentials"});
+        res.status(404).json({ Message: "Invalid Credentials" });
       } else {
         res
           .status(200)
-          .json({ Message: "Login Successfully", isLoggedin: true,userName :existingUser.email });
+          .json({
+            Message: "Login Successfully",
+            isLoggedin: true,
+            userName: existingUser.email,
+          });
       }
     } else {
       res.status(404).send("Create an Account...");
@@ -93,7 +100,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.listen(2020, (err) => {
+app.listen(3003, (err) => {
   if (err) {
     console.log("Error in creating a Server");
   }

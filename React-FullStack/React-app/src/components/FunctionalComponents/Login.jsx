@@ -19,7 +19,8 @@ const Login = () => {
       if (response.status == 200) {
         if(response.data.isLoggedin){
           alert(response.data.Message);
-          navigate("/navbar",{state:response.data.userName});
+          localStorage.setItem('username', response.data.userName);
+          navigate("/navbar");
         }
         else{
           navigate("/");

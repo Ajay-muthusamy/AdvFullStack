@@ -1,19 +1,31 @@
-import React from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import "../../assets/css/Navbar.css";
 
 const NavBar = () => {
-   const location = useLocation();
-   const {state} = location || "Navbar";
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    navigate("/");
+  };
   return (
     <header>
       <nav className="nav-top">
         <div>
-          <h1>{state}</h1>
+          <h1>{username || "Guest"}</h1>
         </div>
         <div className="ul-list">
           <ul>
-            <Link to="/navbar" className="lis"    >
+            <Link to="/navbar" className="lis">
               <li>Home</li>
             </Link>
             <Link to="navbar/about" className="lis">
@@ -34,6 +46,10 @@ const NavBar = () => {
             <Link to="/register" className="lis">
               <li>SignUp</li>
             </Link>
+
+            <li className="lis" onClick={handleLogout} style={{ cursor: "pointer" }}>
+              Logout
+            </li>
           </ul>
         </div>
       </nav>
